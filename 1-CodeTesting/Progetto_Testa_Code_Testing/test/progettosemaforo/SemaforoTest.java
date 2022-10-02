@@ -82,10 +82,5 @@ public class SemaforoTest {
 		s2.changecolor(1, 2);
 		assertEquals("RR", s2.toString());
 	}
-	
-	@Test
-	public void testMCDC() {
-		//relativo al solo change color
-		
-	}
+
 }

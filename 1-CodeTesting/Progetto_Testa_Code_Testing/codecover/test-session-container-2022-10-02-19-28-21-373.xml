@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><TestSessionContainer xmlns="http://www.codecover.org/xml/testsession-container" Date="1664641460904" TestSessionContainerId="cf2a139a-8a34-4352-adad-26d6934f4b27" version="1.0">
+<?xml version="1.0" encoding="UTF-8"?><TestSessionContainer xmlns="http://www.codecover.org/xml/testsession-container" Date="1664731701368" TestSessionContainerId="74533803-2e40-45bc-afb0-5ee2d05119ea" version="1.0">
 <SrcFileList>
 <SrcFile Content="package progettosemaforo;&#13;&#10;public class Semaforo {&#13;&#10;&#13;&#10;&#9;int[] colore;&#13;&#10;&#9;// 0 verde&#13;&#10;&#9;// 1 giallo&#13;&#10;&#9;// 2 rosso&#13;&#10;&#13;&#10;&#9;public Semaforo() {&#13;&#10;&#9;&#9;// nel costruttore li inizializzo entrambi rossi&#13;&#10;&#9;&#9;colore = new int[2];&#13;&#10;&#9;&#9;colore[0] = 2;&#13;&#10;&#9;&#9;colore[1] = 2;&#13;&#10;&#9;}&#13;&#10;&#13;&#10;&#9;public boolean changecolor(int sem, int color) {&#13;&#10;&#9;&#9;if (sem &gt;= 0 &amp;&amp; sem &lt;= 2 &amp;&amp; color &gt;= 0 &amp;&amp; color &lt;= 2) {&#13;&#10;&#9;&#9;&#9;// da verde passo a giallo&#13;&#10;&#9;&#9;&#9;if (color == 1 &amp;&amp; colore[sem] == 0) {&#13;&#10;&#9;&#9;&#9;&#9;colore[sem] = 1;&#13;&#10;&#9;&#9;&#9;&#9;return true;&#13;&#10;&#9;&#9;&#9;}&#13;&#10;&#9;&#9;&#9;// da giallo passo a rosso&#13;&#10;&#9;&#9;&#9;if (color == 2 &amp;&amp; colore[sem] == 1) {&#13;&#10;&#9;&#9;&#9;&#9;colore[sem] = 2;&#13;&#10;&#9;&#9;&#9;&#9;return true;&#13;&#10;&#9;&#9;&#9;}&#13;&#10;&#9;&#9;&#9;// da rosso passo a verde, ma per questo caso devo verificare anche l'altro&#13;&#10;&#9;&#9;&#9;// semaforo&#13;&#10;&#9;&#9;&#9;// se sem = 1 allora l'altro è il sem 0&#13;&#10;&#9;&#9;&#9;if (sem == 1) {&#13;&#10;&#9;&#9;&#9;&#9;if (color == 0 &amp;&amp; colore[sem] == 2 &amp;&amp; colore[0] == 2) {&#13;&#10;&#9;&#9;&#9;&#9;&#9;colore[sem] = 0;&#13;&#10;&#9;&#9;&#9;&#9;&#9;return true;&#13;&#10;&#9;&#9;&#9;&#9;}&#13;&#10;&#9;&#9;&#9;} &#13;&#10;&#9;&#9;&#9;else {&#13;&#10;&#9;&#9;&#9;&#9;if (color == 0 &amp;&amp; colore[sem] == 2 &amp;&amp; colore[1] == 2) {&#13;&#10;&#9;&#9;&#9;&#9;&#9;colore[sem] = 0;&#13;&#10;&#9;&#9;&#9;&#9;&#9;return true;&#13;&#10;&#9;&#9;&#9;&#9;}&#13;&#10;&#9;&#9;&#9;}&#13;&#10;&#9;&#9;&#9;return false;&#13;&#10;&#9;&#9;} &#13;&#10;&#9;&#9;else {&#13;&#10;&#9;&#9;&#9;return false;&#13;&#10;&#9;&#9;}&#13;&#10;&#9;}&#13;&#10;&#13;&#10;&#9;@Override&#13;&#10;&#9;public String toString() {&#13;&#10;&#9;&#9;char sem1 = colore[0] == 0 ? 'V' : colore[0] == 1 ? 'G' : 'R';&#13;&#10;&#9;&#9;char sem2 = colore[1] == 0 ? 'V' : colore[1] == 1 ? 'G' : 'R';&#13;&#10;&#9;&#9;return &quot;&quot; + sem1 + sem2;&#13;&#10;&#9;}&#13;&#10;}&#13;&#10;" Filename="Semaforo.java" Intrnl_Id="1"/>
 </SrcFileList>
@@ -23,20 +23,20 @@
 <HierarchyLvlType EnglishName="default package" IntrnlName="default package" Intrnl_Id="6"/>
 </HierarchyLvlTypeList>
 <MASTRoot>
-<HierarchyLvl HierarchyLvlId="26" HierarchyLvlTypeId="6" Intrnl_Id="7" Name="default package">
+<HierarchyLvl HierarchyLvlId="13" HierarchyLvlTypeId="6" Intrnl_Id="7" Name="default package">
 <Header/>
 <LocList/>
-<HierarchyLvl HierarchyLvlId="25" HierarchyLvlTypeId="3" Intrnl_Id="8" Name="progettosemaforo">
+<HierarchyLvl HierarchyLvlId="12" HierarchyLvlTypeId="3" Intrnl_Id="8" Name="progettosemaforo">
 <Header/>
 <LocList/>
-<HierarchyLvl HierarchyLvlId="24" HierarchyLvlTypeId="5" Intrnl_Id="9" Name="Semaforo">
+<HierarchyLvl HierarchyLvlId="11" HierarchyLvlTypeId="5" Intrnl_Id="9" Name="Semaforo">
 <Header>
 <Loc EndOffset="48" SrcFileId="1" StartOffset="27"/>
 </Header>
 <LocList>
 <Loc EndOffset="1273" SrcFileId="1" StartOffset="27"/>
 </LocList>
-<HierarchyLvl HierarchyLvlId="21" HierarchyLvlTypeId="4" Intrnl_Id="10" Name="Semaforo">
+<HierarchyLvl HierarchyLvlId="8" HierarchyLvlTypeId="4" Intrnl_Id="10" Name="Semaforo">
 <Header>
 <Loc EndOffset="130" SrcFileId="1" StartOffset="113"/>
 </Header>
@@ -66,7 +66,7 @@
 </BasicStmnt>
 </StmntSeq>
 </HierarchyLvl>
-<HierarchyLvl HierarchyLvlId="22" HierarchyLvlTypeId="4" Intrnl_Id="15" Name="changecolor">
+<HierarchyLvl HierarchyLvlId="9" HierarchyLvlTypeId="4" Intrnl_Id="15" Name="changecolor">
 <Header>
 <Loc EndOffset="299" SrcFileId="1" StartOffset="253"/>
 </Header>
@@ -424,7 +424,7 @@
 </CondStmnt>
 </StmntSeq>
 </HierarchyLvl>
-<HierarchyLvl HierarchyLvlId="23" HierarchyLvlTypeId="4" Intrnl_Id="87" Name="toString">
+<HierarchyLvl HierarchyLvlId="10" HierarchyLvlTypeId="4" Intrnl_Id="87" Name="toString">
 <Header>
 <Loc EndOffset="1104" SrcFileId="1" StartOffset="1068"/>
 </Header>
@@ -518,113 +518,40 @@
 </HierarchyLvl>
 </HierarchyLvl>
 </MASTRoot>
-<TestSession Comment="" Date="1664641477249" Name="1-ott-2022 18.24.37">
-<TestCase Comment="" Date="1664641477171" Name="progettosemaforo.SemaforoTest:testString">
+<TestSession Comment="" Date="1664731725197" Name="2-ott-2022 19.28.45">
+<TestCase Comment="" Date="1664731725155" Name="progettosemaforo.SemaforoTestMCDC:testMCDC">
 <CovList>
 <CovPrefix CovItemPrefix="progettosemaforo.Semaforo.java">
-<Cov CovItemId="B1" Value="6"/>
-<Cov CovItemId="B11" Value="1"/>
-<Cov CovItemId="B3" Value="2"/>
-<Cov CovItemId="B4" Value="4"/>
-<Cov CovItemId="B5" Value="2"/>
-<Cov CovItemId="B6" Value="2"/>
-<Cov CovItemId="B7" Value="1"/>
-<Cov CovItemId="B8" Value="1"/>
-<Cov CovItemId="B9" Value="1"/>
-<Cov CovItemId="S1" Value="1"/>
-<Cov CovItemId="S10" Value="2"/>
-<Cov CovItemId="S11" Value="2"/>
-<Cov CovItemId="S12" Value="1"/>
-<Cov CovItemId="S13" Value="1"/>
-<Cov CovItemId="S14" Value="1"/>
-<Cov CovItemId="S15" Value="1"/>
-<Cov CovItemId="S16" Value="1"/>
-<Cov CovItemId="S17" Value="1"/>
-<Cov CovItemId="S2" Value="1"/>
-<Cov CovItemId="S20" Value="7"/>
-<Cov CovItemId="S21" Value="7"/>
-<Cov CovItemId="S22" Value="7"/>
-<Cov CovItemId="S3" Value="1"/>
-<Cov CovItemId="S4" Value="6"/>
-<Cov CovItemId="S5" Value="6"/>
-<Cov CovItemId="S6" Value="2"/>
-<Cov CovItemId="S7" Value="2"/>
-<Cov CovItemId="S8" Value="4"/>
-<Cov CovItemId="S9" Value="2"/>
-</CovPrefix>
-</CovList>
-<AssgnmntList>
-<AssgnmntPrefix RootTermCovItemPrefix="progettosemaforo.Semaforo.java">
-<AssgnmntListEntry Length="4" RootTermCovItemId="C1">
-<MapEntry BoolAssgnmnt="1111" Value="6"/>
-</AssgnmntListEntry>
-<AssgnmntListEntry Length="2" RootTermCovItemId="C2">
-<MapEntry BoolAssgnmnt="02" Value="4"/>
-<MapEntry BoolAssgnmnt="11" Value="2"/>
-</AssgnmntListEntry>
-<AssgnmntListEntry Length="2" RootTermCovItemId="C3">
-<MapEntry BoolAssgnmnt="02" Value="2"/>
-<MapEntry BoolAssgnmnt="11" Value="2"/>
-</AssgnmntListEntry>
-<AssgnmntListEntry Length="1" RootTermCovItemId="C4">
-<MapEntry BoolAssgnmnt="0" Value="1"/>
-<MapEntry BoolAssgnmnt="1" Value="1"/>
-</AssgnmntListEntry>
-<AssgnmntListEntry Length="3" RootTermCovItemId="C5">
-<MapEntry BoolAssgnmnt="111" Value="1"/>
-</AssgnmntListEntry>
-<AssgnmntListEntry Length="3" RootTermCovItemId="C6">
-<MapEntry BoolAssgnmnt="111" Value="1"/>
-</AssgnmntListEntry>
-</AssgnmntPrefix>
-</AssgnmntList>
-<ObjMetaDataList/>
-<MetaDataList/>
-</TestCase>
-<TestCase Comment="" Date="1664641477186" Name="progettosemaforo.SemaforoTest:testSemaforo">
-<CovList>
-<CovPrefix CovItemPrefix="progettosemaforo.Semaforo.java">
-<Cov CovItemId="S1" Value="1"/>
-<Cov CovItemId="S2" Value="1"/>
-<Cov CovItemId="S3" Value="1"/>
-</CovPrefix>
-</CovList>
-<AssgnmntList/>
-<ObjMetaDataList/>
-<MetaDataList/>
-</TestCase>
-<TestCase Comment="" Date="1664641477186" Name="progettosemaforo.SemaforoTest:testChangeColor">
-<CovList>
-<CovPrefix CovItemPrefix="progettosemaforo.Semaforo.java">
-<Cov CovItemId="B1" Value="8"/>
-<Cov CovItemId="B10" Value="1"/>
+<Cov CovItemId="B1" Value="13"/>
+<Cov CovItemId="B10" Value="3"/>
 <Cov CovItemId="B11" Value="2"/>
-<Cov CovItemId="B2" Value="1"/>
+<Cov CovItemId="B12" Value="3"/>
+<Cov CovItemId="B2" Value="4"/>
 <Cov CovItemId="B3" Value="2"/>
-<Cov CovItemId="B4" Value="6"/>
+<Cov CovItemId="B4" Value="11"/>
 <Cov CovItemId="B5" Value="2"/>
-<Cov CovItemId="B6" Value="4"/>
-<Cov CovItemId="B7" Value="2"/>
-<Cov CovItemId="B8" Value="2"/>
+<Cov CovItemId="B6" Value="9"/>
+<Cov CovItemId="B7" Value="4"/>
+<Cov CovItemId="B8" Value="5"/>
 <Cov CovItemId="B9" Value="1"/>
 <Cov CovItemId="S1" Value="1"/>
 <Cov CovItemId="S10" Value="2"/>
-<Cov CovItemId="S11" Value="4"/>
-<Cov CovItemId="S12" Value="2"/>
+<Cov CovItemId="S11" Value="9"/>
+<Cov CovItemId="S12" Value="4"/>
 <Cov CovItemId="S13" Value="1"/>
 <Cov CovItemId="S14" Value="1"/>
-<Cov CovItemId="S15" Value="2"/>
+<Cov CovItemId="S15" Value="5"/>
 <Cov CovItemId="S16" Value="2"/>
 <Cov CovItemId="S17" Value="2"/>
-<Cov CovItemId="S18" Value="1"/>
-<Cov CovItemId="S19" Value="1"/>
+<Cov CovItemId="S18" Value="6"/>
+<Cov CovItemId="S19" Value="4"/>
 <Cov CovItemId="S2" Value="1"/>
 <Cov CovItemId="S3" Value="1"/>
-<Cov CovItemId="S4" Value="9"/>
-<Cov CovItemId="S5" Value="8"/>
+<Cov CovItemId="S4" Value="17"/>
+<Cov CovItemId="S5" Value="13"/>
 <Cov CovItemId="S6" Value="2"/>
 <Cov CovItemId="S7" Value="2"/>
-<Cov CovItemId="S8" Value="6"/>
+<Cov CovItemId="S8" Value="11"/>
 <Cov CovItemId="S9" Value="2"/>
 </CovPrefix>
 </CovList>
@@ -632,167 +559,34 @@
 <AssgnmntPrefix RootTermCovItemPrefix="progettosemaforo.Semaforo.java">
 <AssgnmntListEntry Length="4" RootTermCovItemId="C1">
 <MapEntry BoolAssgnmnt="1022" Value="1"/>
-<MapEntry BoolAssgnmnt="1111" Value="8"/>
-</AssgnmntListEntry>
-<AssgnmntListEntry Length="2" RootTermCovItemId="C2">
-<MapEntry BoolAssgnmnt="02" Value="6"/>
-<MapEntry BoolAssgnmnt="11" Value="2"/>
-</AssgnmntListEntry>
-<AssgnmntListEntry Length="2" RootTermCovItemId="C3">
-<MapEntry BoolAssgnmnt="02" Value="4"/>
-<MapEntry BoolAssgnmnt="11" Value="2"/>
-</AssgnmntListEntry>
-<AssgnmntListEntry Length="1" RootTermCovItemId="C4">
-<MapEntry BoolAssgnmnt="0" Value="2"/>
-<MapEntry BoolAssgnmnt="1" Value="2"/>
-</AssgnmntListEntry>
-<AssgnmntListEntry Length="3" RootTermCovItemId="C5">
-<MapEntry BoolAssgnmnt="110" Value="1"/>
-<MapEntry BoolAssgnmnt="111" Value="1"/>
-</AssgnmntListEntry>
-<AssgnmntListEntry Length="3" RootTermCovItemId="C6">
-<MapEntry BoolAssgnmnt="111" Value="2"/>
-</AssgnmntListEntry>
-</AssgnmntPrefix>
-</AssgnmntList>
-<ObjMetaDataList/>
-<MetaDataList/>
-</TestCase>
-<MetaDataList/>
-</TestSession>
-<TestSession Comment="" Date="1664641588077" Name="1-ott-2022 18.26.28">
-<TestCase Comment="" Date="1664641588046" Name="progettosemaforo.SemaforoTest:testString">
-<CovList>
-<CovPrefix CovItemPrefix="progettosemaforo.Semaforo.java">
-<Cov CovItemId="B1" Value="6"/>
-<Cov CovItemId="B11" Value="1"/>
-<Cov CovItemId="B3" Value="2"/>
-<Cov CovItemId="B4" Value="4"/>
-<Cov CovItemId="B5" Value="2"/>
-<Cov CovItemId="B6" Value="2"/>
-<Cov CovItemId="B7" Value="1"/>
-<Cov CovItemId="B8" Value="1"/>
-<Cov CovItemId="B9" Value="1"/>
-<Cov CovItemId="S1" Value="1"/>
-<Cov CovItemId="S10" Value="2"/>
-<Cov CovItemId="S11" Value="2"/>
-<Cov CovItemId="S12" Value="1"/>
-<Cov CovItemId="S13" Value="1"/>
-<Cov CovItemId="S14" Value="1"/>
-<Cov CovItemId="S15" Value="1"/>
-<Cov CovItemId="S16" Value="1"/>
-<Cov CovItemId="S17" Value="1"/>
-<Cov CovItemId="S2" Value="1"/>
-<Cov CovItemId="S20" Value="7"/>
-<Cov CovItemId="S21" Value="7"/>
-<Cov CovItemId="S22" Value="7"/>
-<Cov CovItemId="S3" Value="1"/>
-<Cov CovItemId="S4" Value="6"/>
-<Cov CovItemId="S5" Value="6"/>
-<Cov CovItemId="S6" Value="2"/>
-<Cov CovItemId="S7" Value="2"/>
-<Cov CovItemId="S8" Value="4"/>
-<Cov CovItemId="S9" Value="2"/>
-</CovPrefix>
-</CovList>
-<AssgnmntList>
-<AssgnmntPrefix RootTermCovItemPrefix="progettosemaforo.Semaforo.java">
-<AssgnmntListEntry Length="4" RootTermCovItemId="C1">
-<MapEntry BoolAssgnmnt="1111" Value="6"/>
-</AssgnmntListEntry>
-<AssgnmntListEntry Length="2" RootTermCovItemId="C2">
-<MapEntry BoolAssgnmnt="02" Value="4"/>
-<MapEntry BoolAssgnmnt="11" Value="2"/>
-</AssgnmntListEntry>
-<AssgnmntListEntry Length="2" RootTermCovItemId="C3">
-<MapEntry BoolAssgnmnt="02" Value="2"/>
-<MapEntry BoolAssgnmnt="11" Value="2"/>
-</AssgnmntListEntry>
-<AssgnmntListEntry Length="1" RootTermCovItemId="C4">
-<MapEntry BoolAssgnmnt="0" Value="1"/>
-<MapEntry BoolAssgnmnt="1" Value="1"/>
-</AssgnmntListEntry>
-<AssgnmntListEntry Length="3" RootTermCovItemId="C5">
-<MapEntry BoolAssgnmnt="111" Value="1"/>
-</AssgnmntListEntry>
-<AssgnmntListEntry Length="3" RootTermCovItemId="C6">
-<MapEntry BoolAssgnmnt="111" Value="1"/>
-</AssgnmntListEntry>
-</AssgnmntPrefix>
-</AssgnmntList>
-<ObjMetaDataList/>
-<MetaDataList/>
-</TestCase>
-<TestCase Comment="" Date="1664641588061" Name="progettosemaforo.SemaforoTest:testSemaforo">
-<CovList>
-<CovPrefix CovItemPrefix="progettosemaforo.Semaforo.java">
-<Cov CovItemId="S1" Value="1"/>
-<Cov CovItemId="S2" Value="1"/>
-<Cov CovItemId="S3" Value="1"/>
-</CovPrefix>
-</CovList>
-<AssgnmntList/>
-<ObjMetaDataList/>
-<MetaDataList/>
-</TestCase>
-<TestCase Comment="" Date="1664641588061" Name="progettosemaforo.SemaforoTest:testChangeColor">
-<CovList>
-<CovPrefix CovItemPrefix="progettosemaforo.Semaforo.java">
-<Cov CovItemId="B1" Value="8"/>
-<Cov CovItemId="B10" Value="1"/>
-<Cov CovItemId="B11" Value="2"/>
-<Cov CovItemId="B2" Value="1"/>
-<Cov CovItemId="B3" Value="2"/>
-<Cov CovItemId="B4" Value="6"/>
-<Cov CovItemId="B5" Value="2"/>
-<Cov CovItemId="B6" Value="4"/>
-<Cov CovItemId="B7" Value="2"/>
-<Cov CovItemId="B8" Value="2"/>
-<Cov CovItemId="B9" Value="1"/>
-<Cov CovItemId="S1" Value="1"/>
-<Cov CovItemId="S10" Value="2"/>
-<Cov CovItemId="S11" Value="4"/>
-<Cov CovItemId="S12" Value="2"/>
-<Cov CovItemId="S13" Value="1"/>
-<Cov CovItemId="S14" Value="1"/>
-<Cov CovItemId="S15" Value="2"/>
-<Cov CovItemId="S16" Value="2"/>
-<Cov CovItemId="S17" Value="2"/>
-<Cov CovItemId="S18" Value="1"/>
-<Cov CovItemId="S19" Value="1"/>
-<Cov CovItemId="S2" Value="1"/>
-<Cov CovItemId="S3" Value="1"/>
-<Cov CovItemId="S4" Value="9"/>
-<Cov CovItemId="S5" Value="8"/>
-<Cov CovItemId="S6" Value="2"/>
-<Cov CovItemId="S7" Value="2"/>
-<Cov CovItemId="S8" Value="6"/>
-<Cov CovItemId="S9" Value="2"/>
-</CovPrefix>
-</CovList>
-<AssgnmntList>
-<AssgnmntPrefix RootTermCovItemPrefix="progettosemaforo.Semaforo.java">
-<AssgnmntListEntry Length="4" RootTermCovItemId="C1">
-<MapEntry BoolAssgnmnt="1111" Value="8"/>
+<MapEntry BoolAssgnmnt="1102" Value="1"/>
+<MapEntry BoolAssgnmnt="1110" Value="1"/>
+<MapEntry BoolAssgnmnt="1111" Value="13"/>
 <MapEntry BoolAssgnmnt="0222" Value="1"/>
 </AssgnmntListEntry>
 <AssgnmntListEntry Length="2" RootTermCovItemId="C2">
-<MapEntry BoolAssgnmnt="02" Value="6"/>
+<MapEntry BoolAssgnmnt="02" Value="10"/>
+<MapEntry BoolAssgnmnt="10" Value="1"/>
 <MapEntry BoolAssgnmnt="11" Value="2"/>
 </AssgnmntListEntry>
 <AssgnmntListEntry Length="2" RootTermCovItemId="C3">
-<MapEntry BoolAssgnmnt="02" Value="4"/>
+<MapEntry BoolAssgnmnt="02" Value="7"/>
+<MapEntry BoolAssgnmnt="10" Value="2"/>
 <MapEntry BoolAssgnmnt="11" Value="2"/>
 </AssgnmntListEntry>
 <AssgnmntListEntry Length="1" RootTermCovItemId="C4">
-<MapEntry BoolAssgnmnt="0" Value="2"/>
-<MapEntry BoolAssgnmnt="1" Value="2"/>
+<MapEntry BoolAssgnmnt="0" Value="5"/>
+<MapEntry BoolAssgnmnt="1" Value="4"/>
 </AssgnmntListEntry>
 <AssgnmntListEntry Length="3" RootTermCovItemId="C5">
+<MapEntry BoolAssgnmnt="022" Value="1"/>
+<MapEntry BoolAssgnmnt="102" Value="1"/>
 <MapEntry BoolAssgnmnt="110" Value="1"/>
 <MapEntry BoolAssgnmnt="111" Value="1"/>
 </AssgnmntListEntry>
 <AssgnmntListEntry Length="3" RootTermCovItemId="C6">
+<MapEntry BoolAssgnmnt="022" Value="2"/>
+<MapEntry BoolAssgnmnt="110" Value="1"/>
 <MapEntry BoolAssgnmnt="111" Value="2"/>
 </AssgnmntListEntry>
 </AssgnmntPrefix>
