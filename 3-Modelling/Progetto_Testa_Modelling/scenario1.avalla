@@ -1,0 +1,43 @@
+scenario scenario1
+load semaforo.asm
+
+check stato(DX) = ROSSO;
+check stato(SX) = ROSSO;
+set semSelezionato := DX;
+set colSelezionato := VERDE;
+
+step
+check stato(DX) = ROSSO;
+check stato(SX) = ROSSO;
+set semSelezionato := DX;
+set colSelezionato := VERDE;
+
+step
+check stato(DX) = ROSSO;
+check stato(SX) = ROSSO;
+set semSelezionato := DX;
+set colSelezionato := VERDE;
+
+step
+check stato(DX) = ROSSO;
+check stato(SX) = ROSSO;
+set semSelezionato := DX;
+set colSelezionato := VERDE;
+
+step
+check stato(DX) = ROSSO;
+check stato(SX) = ROSSO;
+set semSelezionato := DX;
+set colSelezionato := VERDE;
+
+step
+check stato(DX) = ROSSO;
+check stato(SX) = ROSSO;
+set semSelezionato := DX;
+set colSelezionato := VERDE;
+
+step
+check stato(DX) = ROSSO;
+check stato(SX) = ROSSO;
+set semSelezionato := DX;
+set colSelezionato := VERDE;
