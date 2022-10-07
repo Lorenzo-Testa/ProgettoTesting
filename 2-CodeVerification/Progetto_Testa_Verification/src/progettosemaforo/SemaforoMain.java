@@ -19,9 +19,9 @@ public class SemaforoMain {
 		System.out.println(s1.toString());
 		
 		
-		s1.changecolor(3, 0);
-		System.out.println(s1.toString());
-		s1.changecolor(0, 3);
+//		s1.changecolor(3, 0);
+//		System.out.println(s1.toString());
+//		s1.changecolor(0, 3);
 		
 
 	}
