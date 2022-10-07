@@ -25,6 +25,9 @@ definitions:
 		
 	macro rule r_rosso($t in Semafori) =
 		stato($t) := ROSSO
+	
+	macro rule r_nothing = 
+		skip
 		
 	//proprietà temporali
 	//c'è sempre almeno un semaforo rosso
@@ -53,7 +56,7 @@ definitions:
 						r_rosso[semSelezionato]
 					endif
 				endpar
-	endif
+			endif
 			if(semSelezionato = SX) then
 				par
 					if(colSelezionato = VERDE and stato(DX)=ROSSO) then
@@ -66,7 +69,46 @@ definitions:
 						r_rosso[semSelezionato]
 					endif
 				endpar
-	endif
+			endif
 		endpar
+
+//		VERSIONE CON GLI ELSE PER CHIUDERE LA 3, CHE PERO' NON CHIUDE
+//	
+//		if(semSelezionato = DX) then
+//				if(colSelezionato = VERDE and stato(SX)=ROSSO) then
+//					r_verde[semSelezionato]
+//				else
+//					if(colSelezionato = GIALLO and stato(DX)=VERDE) then
+//						r_giallo[semSelezionato]
+//					else
+//						if(colSelezionato = ROSSO and stato(DX)=GIALLO) then
+//							r_rosso[semSelezionato]
+//						else
+//							r_nothing[]
+//						endif
+//					endif
+//				endif
+//		else
+//			if(semSelezionato = SX) then
+//				if(colSelezionato = VERDE and stato(DX)=ROSSO) then
+//					r_verde[semSelezionato]
+//				else
+//					if(colSelezionato = GIALLO and stato(SX)=VERDE) then
+//						r_giallo[semSelezionato]
+//					else
+//						if(colSelezionato = ROSSO and stato(SX)=GIALLO) then
+//							r_rosso[semSelezionato]
+//						else
+//							r_nothing[]
+//						endif
+//					endif
+//				endif
+//			else
+//				r_nothing[]
+//			endif
+//		endif
+
+		
+		
 default init s0:
 	function stato($t in Semafori) = ROSSO
