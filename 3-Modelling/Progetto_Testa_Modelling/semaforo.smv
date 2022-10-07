@@ -1,0 +1,33 @@
+--file D:\UNIVERSITA\SW_UNIVERSITA\Workspaces_Eclipse\Workspace_Eclipse_ASMETA_PER_PROGETTO\Progetto_Testa_Modelling\semaforo.smv
+-- options: flatten? true
+MODULE main
+	VAR
+		colSelezionato: {GIALLO, ROSSO, VERDE}; --monitored
+		semSelezionato: {DX, SX}; --monitored
+		stato_DX: {COLORI_UNDEF, GIALLO, ROSSO, VERDE}; --controlled
+		stato_SX: {COLORI_UNDEF, GIALLO, ROSSO, VERDE}; --controlled
+	DEFINE
+	CONSTANTS SEMAFORI_UNDEF, DX, SX, COLORI_UNDEF, GIALLO, ROSSO, VERDE;
+	ASSIGN
+		init(stato_DX) := ROSSO;
+		init(stato_SX) := ROSSO;
+		next(stato_DX) :=
+			case
+				(((((stato_DX = ROSSO) & (colSelezionato = VERDE)) & (semSelezionato = SX)) & (semSelezionato = DX)) | ((semSelezionato = DX) & ((semSelezionato = DX) & ((stato_SX = ROSSO) & (colSelezionato = VERDE))))): VERDE;
+				(((semSelezionato = DX) & ((semSelezionato = DX) & ((colSelezionato = ROSSO) & (stato_DX = GIALLO)))) | ((semSelezionato = DX) & ((semSelezionato = SX) & ((stato_SX = GIALLO) & (colSelezionato = ROSSO))))): ROSSO;
+				(((semSelezionato = DX) & (((stato_DX = VERDE) & (colSelezionato = GIALLO)) & (semSelezionato = DX))) | (((semSelezionato = SX) & ((stato_SX = VERDE) & (colSelezionato = GIALLO))) & (semSelezionato = DX))): GIALLO;
+				TRUE: stato_DX;
+			esac;
+		next(stato_SX) :=
+			case
+				(((((stato_DX = ROSSO) & (colSelezionato = VERDE)) & (semSelezionato = SX)) & (semSelezionato = SX)) | ((semSelezionato = SX) & ((semSelezionato = DX) & ((stato_SX = ROSSO) & (colSelezionato = VERDE))))): VERDE;
+				(((semSelezionato = SX) & ((semSelezionato = SX) & ((stato_SX = GIALLO) & (colSelezionato = ROSSO)))) | ((semSelezionato = SX) & ((semSelezionato = DX) & ((colSelezionato = ROSSO) & (stato_DX = GIALLO))))): ROSSO;
+				((((semSelezionato = SX) & ((stato_SX = VERDE) & (colSelezionato = GIALLO))) & (semSelezionato = SX)) | ((semSelezionato = SX) & (((stato_DX = VERDE) & (colSelezionato = GIALLO)) & (semSelezionato = DX)))): GIALLO;
+				TRUE: stato_SX;
+			esac;
+--CTL properties
+CTLSPEC NAME ctl0 := AG(((stato_DX = ROSSO) | (stato_SX = ROSSO)));
+CTLSPEC NAME ctl1 := AG(!((stato_SX = VERDE) & (stato_DX = VERDE)));
+CTLSPEC NAME ctl2 := AG((((stato_DX = VERDE) -> (stato_SX = ROSSO)) & ((stato_SX = VERDE) -> (stato_DX = ROSSO))));
+CTLSPEC NAME ctl3 := EF(((stato_DX = ROSSO) & (stato_SX = GIALLO)));
+CTLSPEC NAME ctl4 := AG(((stato_DX = VERDE) -> EF((stato_DX = GIALLO))));
