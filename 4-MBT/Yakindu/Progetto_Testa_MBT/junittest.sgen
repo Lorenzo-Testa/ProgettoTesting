@@ -1,0 +1,14 @@
+GeneratorModel for sctunit::java {
+
+	const PROJECT : string = "Progetto_Testa_MBT"
+
+	const FOLDER : string = "src-gen"
+
+	test StatechartTest {
+
+		feature Outlet {
+			targetProject = PROJECT
+			targetFolder = FOLDER
+		}
+	}
+}

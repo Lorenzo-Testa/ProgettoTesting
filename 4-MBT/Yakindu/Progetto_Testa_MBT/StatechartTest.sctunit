@@ -1,0 +1,21 @@
+testclass StatechartTest for statechart Statechart {
+	
+	@Test
+	operation test() {
+		enter
+			assert active (main_region.RR)
+			raise dx_Verde
+			assert active (main_region.RV)
+			raise dx_Giallo
+			assert active (main_region.RG)
+			raise dx_Rosso
+			assert active (main_region.RR)
+			raise sx_Verde
+			assert active (main_region.VR)
+			raise sx_Giallo
+			assert active (main_region.GR)
+			raise sx_Rosso
+			assert active (main_region.RR)			
+		exit
+	}
+}

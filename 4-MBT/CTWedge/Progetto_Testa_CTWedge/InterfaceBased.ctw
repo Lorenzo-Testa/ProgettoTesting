@@ -1,0 +1,43 @@
+Model InterfaceBased
+
+/**
+ * modifica alla specifica (solo per ctwedge):
+ * poichè la variabile stato non è possibile renderla modificabile come parametro
+ * e che il metodo ritorna true solo se vado in un nuovo stato, allora si considera
+ * solo che il metodo restituisca true quando ottiene in ingresso una combinazione
+ * valida, come se eseguisse comunque il cambio di colore anceh se lo stato è lo
+ * stesso o non in sequenza.
+ */
+
+Parameters:
+	sem : [-2 .. 2]
+	color : [-2 .. 2]
+	change : Boolean
+
+Constraints:
+	# (change == false) => (color < 0 OR color >= 2) #
+	# (change == false) => (sem != 0 OR sem != 1) #
+
+///**
+// * Versione nella quale creo un parametro oldstate che indica il vecchio stato
+// * e quindi lo stato cambia solo quando il nuovo colore è nella sequenza corretta
+// * e l'altro semaforo è a rosso
+// */
+//	
+//Parameters:
+//	//0 verde
+//	//1 giallo
+//	//2 rosso
+//	sem : [-2 .. 2]
+//	color : [-2 .. 2]
+//	statodxold : [-2 .. 2] 
+//	statosxold : [-2 .. 2]
+//	change : Boolean
+//
+//Constraints:
+//	# (change == true) <=> ((sem == 0 and 
+//		((color == (statodxold + 1) and statosxold == 2) or (color == 0 and statodxold == 2 and statosxold == 2))
+//	) or
+//	(sem == 1 and 
+//		((color == (statosxold + 1) and statodxold == 2) or (color == 0 and statosxold == 2 and statodxold == 2))
+//	)) #
